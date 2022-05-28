@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}
+Read later post
+
+{% endblock  %}
+
+{% block content%}
+
+<section>
+  <ul>
+       {% if not has_post %}
+       
+       <h1> you did not save any post</h1>
+       {% endif %}
+      {% for pos in post %}
+                 
+         <li><a href = ' {% url 'post-detail-page' pos.slug %}'>{{pos.title}} </a></li>
+                               
+      
+      {% endfor %}
+   
+
+  </ul>
+</section> 
+
+{% endblock  %}
+
